@@ -1,10 +1,8 @@
 name: telegram-bot
 services:
   - name: telegram-bot
+    type: worker
     image: python:3.10
-    type: web
-    ports:
-      - 80
     env:
       TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
     build:
