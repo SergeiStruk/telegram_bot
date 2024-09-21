@@ -1,0 +1,14 @@
+name: telegram-bot
+services:
+  - name: telegram-bot
+    image: python:3.10
+    type: web
+    ports:
+      - 80
+    env:
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+    build:
+      commands:
+        - pip install -r requirements.txt
+    run:
+      command: python bot.py
